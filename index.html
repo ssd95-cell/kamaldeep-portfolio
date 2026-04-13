@@ -20,7 +20,43 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+<script>
+const projects = [
+  {
+    title: "Institutional MEP Modelling",
+    image: "mep_school.png",
+    desc: "Designed HVAC, Electrical, and Plumbing systems for a 70,951 sqft elementary school. Resolved routing conflicts within ceiling cavities using Revit.",
+    tool: "Revit"
+  },
+  {
+    title: "14-Storey Structural Design",
+    image: "structural_modelling.png",
+    desc: "Modelled full structural system including concrete foundations, footings, and steel floor joists. Linked architectural models for alignment.",
+    tool: "Revit"
+  },
+  {
+    title: "Civil 3D Land Development",
+    image: "civil_development.png",
+    desc: "Developed survey databases and alignments for road networks and water/storm sewer systems.",
+    tool: "Civil 3D"
+  }
+];
+  
+const container = document.querySelector(".projects-grid");
 
+container.innerHTML = "";
+
+projects.forEach(p => {
+  container.innerHTML += `
+    <div class="project-card">
+      <img src="${p.image}" alt="${p.title}">
+      <h3 class="project-title">${p.title}</h3>
+      <p class="project-desc">${p.desc}</p>
+      <span class="project-tool">${p.tool}</span>
+    </div>
+  `;
+});
+</script>
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
