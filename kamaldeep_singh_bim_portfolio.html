@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamaldeep Singh — BIM Coordinator & Project Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A2E44;
+    --blue: #2D5F8A;
+    --steel: #4A7FA5;
+    --cream: #F7F4EF;
+    --warm: #EDE8DF;
+    --text: #1C1C1C;
+    --muted: #6B7280;
+    --accent: #C8A96E;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(247,244,239,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26,46,68,0.08);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem; color: var(--navy); text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  #home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+  }
+  .hero-left {
+    background: var(--navy);
+    padding: 6rem 4rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .hero-tag {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    line-height: 1.1; color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-desc {
+    font-size: 1rem; line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+    max-width: 380px; margin-bottom: 2.5rem;
+  }
+  .hero-creds { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .cred-badge {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(200,169,110,0.4);
+    border-radius: 2rem;
+    font-size: 0.75rem; font-weight: 500;
+    color: var(--accent); letter-spacing: 0.06em;
+  }
+  .hero-right {
+    background: var(--warm);
+    padding: 6rem 4rem;
+    display: flex; align-items: center;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2.5rem; width: 100%;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem; color: var(--navy); line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.8rem; color: var(--muted); line-height: 1.4;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  section { padding: 6rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--steel);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    color: var(--navy); line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+  #about { background: #fff; }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    gap: 5rem; align-items: start;
+  }
+  .photo-placeholder {
+    width: 100%; aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--warm) 0%, var(--steel) 100%);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .photo-placeholder img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .photo-placeholder .initials {
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem; color: rgba(255,255,255,0.4);
+  }
+  .skills-list {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin: 1.5rem 0 2rem;
+  }
+  .skill-item {
+    font-size: 0.85rem; color: var(--muted);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--warm);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .skill-item::before {
+    content: ''; width: 4px; height: 4px;
+    border-radius: 50%; background: var(--steel); flex-shrink: 0;
+  }
+  .about-text { font-size: 1rem; line-height: 1.75; color: var(--muted); margin-bottom: 1.5rem; }
+  #experience { background: var(--cream); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    padding: 0 0 3.5rem 2.5rem;
+    position: relative;
+    border-left: 1px solid rgba(45,95,138,0.25);
+  }
+  .exp-dot {
+    position: absolute; left: -5px; top: 6px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--steel);
+    border: 2px solid var(--cream);
+  }
+  .exp-date {
+    font-size: 0.75rem; color: var(--accent); font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .exp-role {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem; color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .exp-company {
+    font-size: 0.9rem; font-weight: 500;
+    color: var(--blue); margin-bottom: 1rem;
+  }
+  .exp-desc { font-size: 0.9rem; line-height: 1.7; color: var(--muted); max-width: 580px; }
+  #projects { background: var(--navy); }
+  #projects .section-label { color: var(--accent); }
+  #projects .section-title { color: #fff; }
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .project-card:hover { background: rgba(255,255,255,0.08); }
+  .project-img {
+    width: 100%; height: 180px;
+    background: rgba(74,127,165,0.2);
+    border-radius: 2px;
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .project-img img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .project-img-label {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.8rem; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem; color: #fff; margin-bottom: 0.7rem;
+  }
+  .project-desc {
+    font-size: 0.85rem; color: rgba(255,255,255,0.6);
+    line-height: 1.65; margin-bottom: 1rem;
+  }
+  .project-tool {
+    display: inline-block; margin: 0.25rem 0.25rem 0 0;
+    padding: 0.2rem 0.65rem;
+    border: 1px solid rgba(200,169,110,0.5);
+    color: var(--accent); font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+  #contact { background: #fff; text-align: center; }
+  #contact .section-title { margin-bottom: 1rem; }
+  .contact-sub { font-size: 1rem; color: var(--muted); margin-bottom: 2.5rem; }
+  .contact-btn {
+    display: inline-block; padding: 0.9rem 2.2rem;
+    background: var(--navy); color: #fff;
+    text-decoration: none; text-transform: uppercase;
+    font-size: 0.85rem; letter-spacing: 0.08em;
+    transition: background 0.2s;
+  }
+  .contact-btn:hover { background: var(--blue); }
+  footer {
+    background: var(--navy);
+    padding: 2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-text { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+  .footer-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.6);
+  }
+  @media (max-width: 900px) {
+    #home { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero-left, .hero-right { padding: 4rem 2rem; }
+    .container { padding: 0 2rem; }
+    footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">KS</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <p class="hero-tag">BIM Coordinator &amp; Project Manager</p>
+    <h1 class="hero-name">Kamal<em>deep</em><br>Singh</h1>
+    <p class="hero-desc">Bridging architectural design and digital construction through model-based workflows and PMP-level project discipline.</p>
+    <div class="hero-creds">
+      <span class="cred-badge">PMP</span>
+      <span class="cred-badge">BCIN Designer</span>
+      <span class="cred-badge">BIM Cert 2026</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Clashes Resolved</div>
+      </div>
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">BIM Projects Delivered</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">OBC Compliant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="photo-placeholder">
+        <!-- Replace with: <img src="profile.png" alt="Kamaldeep Singh"> -->
+        <span class="initials">KS</span>
+      </div>
+      <div>
+        <p class="section-label">Profile</p>
+        <h2 class="section-title">Architect of coordination,<br>champion of compliance.</h2>
+        <p class="about-text">I am a Project Manager and BIM Specialist with over 7 years of experience delivering residential and institutional projects in Ontario. Currently completing my BIM Management certification at George Brown College.</p>
+        <p class="about-text">My work bridges the gap between design intent and construction reality — using digital tools to reduce risk, resolve conflict, and ensure every project meets regulatory standards from day one.</p>
+        <div class="skills-list">
+          <span class="skill-item">Revit &amp; Navisworks</span>
+          <span class="skill-item">Civil 3D &amp; AutoCAD</span>
+          <span class="skill-item">BIM 360 / ACC</span>
+          <span class="skill-item">OBC Compliance</span>
+          <span class="skill-item">4D Scheduling</span>
+          <span class="skill-item">Clash Detection</span>
+          <span class="skill-item">LOD Matrix</span>
+          <span class="skill-item">Project Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <p class="exp-date">2022 — Present</p>
+        <h3 class="exp-role">BIM Coordinator</h3>
+        <p class="exp-company">George Brown College · Toronto, ON</p>
+        <p class="exp-desc">Leading BIM coordination workflows for multi-discipline projects. Developing BIM Execution Plans, managing LOD matrices, and facilitating interdisciplinary clash detection reviews using Navisworks.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <p class="exp-date">2019 — 2022</p>
+        <h3 class="exp-role">Project Manager</h3>
+        <p class="exp-company">Residential &amp; Institutional Projects · Ontario</p>
+        <p class="exp-desc">Managed end-to-end delivery of residential and institutional construction projects. Coordinated design teams, ensured OBC compliance, and maintained project schedules and budgets.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <p class="exp-date">2017 — 2019</p>
+        <h3 class="exp-role">Architectural Technologist</h3>
+        <p class="exp-company">Design &amp; Drafting Practice · Ontario</p>
+        <p class="exp-desc">Produced permit and construction drawings using AutoCAD and Revit. Supported BCIN-certified permit submissions and coordinated with municipal planning departments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Technical Works</p>
+    <h2 class="section-title">BIM Portfolio</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-img">
+          <!-- Replace with: <img src="mep_school.png" alt="MEP Modelling"> -->
+          <span class="project-img-label">MEP Modelling</span>
+        </div>
+        <h3 class="project-title">Institutional MEP Modelling</h3>
+        <p class="project-desc">Designed HVAC, Electrical, and Plumbing systems for a 70,951 sqft elementary school. Resolved routing conflicts within ceiling cavities using Revit.</p>
+        <span class="project-tool">Revit</span>
+        <span class="project-tool">MEP</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <!-- Replace with: <img src="structural_modelling.png" alt="Structural"> -->
+          <span class="project-img-label">Structural</span>
+        </div>
+        <h3 class="project-title">14-Storey Structural Design</h3>
+        <p class="project-desc">Modelled full structural system including concrete foundations, footings, and steel floor joists. Linked architectural models for full-discipline alignment.</p>
+        <span class="project-tool">Revit</span>
+        <span class="project-tool">Structural</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <!-- Replace with: <img src="civil_development.png" alt="Civil 3D"> -->
+          <span class="project-img-label">Civil 3D</span>
+        </div>
+        <h3 class="project-title">Civil 3D Land Development</h3>
+        <p class="project-desc">Developed survey databases and alignments for road networks and water/storm sewer assemblies for a farmland parcel development.</p>
+        <span class="project-tool">Civil 3D</span>
+        <span class="project-tool">Infrastructure</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <!-- Replace with: <img src="410_keele.png" alt="410 Keele St"> -->
+          <span class="project-img-label">410 Keele St</span>
+        </div>
+        <h3 class="project-title">410 Keele St — Multi-Residential</h3>
+        <p class="project-desc">Modelled building envelope, suite floor plans, and renderings for an existing building designed by RAW Architects.</p>
+        <span class="project-tool">Revit</span>
+        <span class="project-tool">Residential</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <!-- Replace with: <img src="clash_detection.png" alt="Navisworks"> -->
+          <span class="project-img-label">Navisworks</span>
+        </div>
+        <h3 class="project-title">4D Scheduling &amp; Clash Detection</h3>
+        <p class="project-desc">Automated clash detection and 4D simulations using Navisworks to review material take-offs and construction sequencing animations.</p>
+        <span class="project-tool">Navisworks</span>
+        <span class="project-tool">4D</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <!-- Replace with: <img src="kingston_road.png" alt="1496 Kingston Rd"> -->
+          <span class="project-img-label">1496 Kingston Rd</span>
+        </div>
+        <h3 class="project-title">1496 Kingston Rd — Integrated BIM</h3>
+        <p class="project-desc">Led BIM-based development utilizing BXP, LOD Matrix, and Autodesk Construction Cloud for full multi-discipline collaboration.</p>
+        <span class="project-tool">ACC</span>
+        <span class="project-tool">Revit</span>
+        <span class="project-tool">BXP</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Let's build something together.</h2>
+    <p class="contact-sub">Open to BIM coordination roles, project management opportunities, and consulting engagements in Ontario.</p>
+    <a href="mailto:kamal.007_deep@hotmail.com" class="contact-btn">Send an Email</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Kamaldeep Singh</span>
+  <span class="footer-text">BIM Coordinator &amp; Project Manager · Toronto, ON · © 2026</span>
+</footer>
+
+</body>
+</html>
