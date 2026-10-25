@@ -4,17 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamaldeep Singh — BIM Coordinator & Project Manager</title>
+<meta name="description" content="Kamaldeep Singh is a BIM Coordinator and Project Manager in Ontario, specializing in Revit, multidisciplinary coordination, 4D scheduling, and OBC compliance.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kamaldeep Singh — BIM Coordinator &amp; Project Manager">
+<meta property="og:description" content="Kamaldeep Singh is a BIM Coordinator and Project Manager in Ontario, specializing in Revit, multidisciplinary coordination, 4D scheduling, and OBC compliance.">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kamaldeep Singh — BIM Coordinator &amp; Project Manager">
+<meta name="twitter:description" content="Kamaldeep Singh is a BIM Coordinator and Project Manager in Ontario, specializing in Revit, multidisciplinary coordination, 4D scheduling, and OBC compliance.">
+<!-- Add canonical, og:url, and social image URLs once the production URL and preview image are confirmed. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #1A2E44;
     --blue: #2D5F8A;
-    --steel: #4A7FA5;
+    --steel: #386889;
     --cream: #F7F4EF;
     --warm: #EDE8DF;
     --text: #1C1C1C;
-    --muted: #6B7280;
+    --muted: #596270;
     --accent: #C8A96E;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,7 +32,7 @@
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--text);
-    overflow-x: hidden;
+    overflow-wrap: break-word;
   }
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -44,7 +53,7 @@
     text-transform: uppercase; color: var(--muted);
     text-decoration: none; transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--navy); }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--navy); }
   #home {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -160,7 +169,7 @@
     border: 2px solid var(--cream);
   }
   .exp-date {
-    font-size: 0.75rem; color: var(--accent); font-weight: 500;
+    font-size: 0.75rem; color: #80612F; font-weight: 500;
     letter-spacing: 0.08em; text-transform: uppercase;
     margin-bottom: 0.4rem;
   }
@@ -178,7 +187,7 @@
   #projects .section-label { color: var(--accent); }
   #projects .section-title { color: #fff; }
   .projects-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 1.5rem;
   }
   .project-card {
@@ -210,7 +219,7 @@
     font-size: 1.15rem; color: #fff; margin-bottom: 0.7rem;
   }
   .project-desc {
-    font-size: 0.85rem; color: rgba(255,255,255,0.6);
+    font-size: 0.85rem; color: rgba(255,255,255,0.8);
     line-height: 1.65; margin-bottom: 1rem;
   }
   .project-tool {
@@ -230,16 +239,16 @@
     font-size: 0.85rem; letter-spacing: 0.08em;
     transition: background 0.2s;
   }
-  .contact-btn:hover { background: var(--blue); }
+  .contact-btn:hover, .contact-btn:focus-visible { background: var(--blue); }
   footer {
     background: var(--navy);
     padding: 2rem 4rem;
     display: flex; justify-content: space-between; align-items: center;
   }
-  .footer-text { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+  .footer-text { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
   .footer-name {
     font-family: 'DM Serif Display', serif;
-    font-size: 1rem; color: rgba(255,255,255,0.6);
+    font-size: 1rem; color: rgba(255,255,255,0.8);
   }
   @media (max-width: 900px) {
     #home { grid-template-columns: 1fr; }
@@ -250,12 +259,44 @@
     .container { padding: 0 2rem; }
     footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
+  /* Keep navigation usable without JavaScript or a collapsed menu. */
+  nav { flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+  .nav-links { flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+  .nav-links a, .nav-logo { display: inline-flex; align-items: center; min-height: 44px; }
+  a:focus-visible, [tabindex="-1"]:focus-visible {
+    outline: 3px solid #2D5F8A; outline-offset: 4px;
+    box-shadow: 0 0 0 7px var(--cream);
+  }
+  .skip-link {
+    position: fixed; top: 0.5rem; left: 0.5rem; z-index: 200;
+    padding: 0.8rem 1rem; background: var(--cream); color: var(--navy);
+    transform: translateY(-200%);
+  }
+  .skip-link:focus { transform: translateY(0); }
+  main, section { scroll-margin-top: 8rem; }
+  .skills-list { list-style: none; }
+  .hero-left, .hero-right, .about-grid > *, .project-card { min-width: 0; }
+  @media (max-width: 600px) {
+    nav { position: static; padding: 0.75rem 1rem; }
+    .nav-links { width: 100%; gap: 0.25rem 1rem; }
+    .hero-left, .hero-right { padding: 3rem 1.25rem; }
+    .container { padding: 0 1.25rem; }
+    .stats-grid { gap: 2rem 1rem; }
+    .skills-list { grid-template-columns: 1fr; }
+    section { padding: 3.5rem 0; scroll-margin-top: 1rem; }
+    main { scroll-margin-top: 1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+  }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#home" class="nav-logo">KS</a>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Primary">
+  <a href="#home" class="nav-logo" aria-label="Kamaldeep Singh — home">KS</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -264,11 +305,12 @@
   </ul>
 </nav>
 
+<main id="main-content" tabindex="-1">
 <!-- HERO -->
-<section id="home">
+<section id="home" aria-labelledby="hero-name">
   <div class="hero-left">
     <p class="hero-tag">BIM Coordinator &amp; Project Manager</p>
-    <h1 class="hero-name">Kamal<em>deep</em><br>Singh</h1>
+    <h1 id="hero-name" class="hero-name">Kamal<em>deep</em><br>Singh</h1>
     <p class="hero-desc">Bridging architectural design and digital construction through model-based workflows and PMP-level project discipline.</p>
     <div class="hero-creds">
       <span class="cred-badge">PMP</span>
@@ -299,38 +341,38 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about-grid">
-      <div class="photo-placeholder">
-        <!-- Replace with: <img src="profile.png" alt="Kamaldeep Singh"> -->
+      <div class="photo-placeholder" aria-hidden="true">
+        <!-- When adding a verified portrait, remove aria-hidden from this wrapper and use alt="Kamaldeep Singh" on the image. -->
         <span class="initials">KS</span>
       </div>
       <div>
         <p class="section-label">Profile</p>
-        <h2 class="section-title">Architect of coordination,<br>champion of compliance.</h2>
+        <h2 id="about-heading" class="section-title">Architect of coordination,<br>champion of compliance.</h2>
         <p class="about-text">I am a Project Manager and BIM Specialist with over 7 years of experience delivering residential and institutional projects in Ontario. Currently completing my BIM Management certification at George Brown College.</p>
         <p class="about-text">My work bridges the gap between design intent and construction reality — using digital tools to reduce risk, resolve conflict, and ensure every project meets regulatory standards from day one.</p>
-        <div class="skills-list">
-          <span class="skill-item">Revit &amp; Navisworks</span>
-          <span class="skill-item">Civil 3D &amp; AutoCAD</span>
-          <span class="skill-item">BIM 360 / ACC</span>
-          <span class="skill-item">OBC Compliance</span>
-          <span class="skill-item">4D Scheduling</span>
-          <span class="skill-item">Clash Detection</span>
-          <span class="skill-item">LOD Matrix</span>
-          <span class="skill-item">Project Management</span>
-        </div>
+        <ul class="skills-list">
+          <li class="skill-item">Revit &amp; Navisworks</li>
+          <li class="skill-item">Civil 3D &amp; AutoCAD</li>
+          <li class="skill-item">BIM 360 / ACC</li>
+          <li class="skill-item">OBC Compliance</li>
+          <li class="skill-item">4D Scheduling</li>
+          <li class="skill-item">Clash Detection</li>
+          <li class="skill-item">LOD Matrix</li>
+          <li class="skill-item">Project Management</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section id="experience" aria-labelledby="experience-heading">
   <div class="container">
     <p class="section-label">Career</p>
-    <h2 class="section-title">Experience</h2>
+    <h2 id="experience-heading" class="section-title">Experience</h2>
     <div class="exp-list">
       <div class="exp-item">
         <div class="exp-dot"></div>
@@ -358,70 +400,70 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" aria-labelledby="projects-heading">
   <div class="container">
     <p class="section-label">Technical Works</p>
-    <h2 class="section-title">BIM Portfolio</h2>
+    <h2 id="projects-heading" class="section-title">BIM Portfolio</h2>
     <div class="projects-grid">
 
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="mep_school.png" alt="MEP Modelling"> -->
+      <article class="project-card">
+        <div class="project-img" aria-hidden="true">
+          <!-- When adding mep_school.png, remove aria-hidden from this wrapper and provide alt text describing the actual model view. -->
           <span class="project-img-label">MEP Modelling</span>
         </div>
         <h3 class="project-title">Institutional MEP Modelling</h3>
         <p class="project-desc">Designed HVAC, Electrical, and Plumbing systems for a 70,951 sqft elementary school. Resolved routing conflicts within ceiling cavities using Revit.</p>
         <span class="project-tool">Revit</span>
         <span class="project-tool">MEP</span>
-      </div>
+      </article>
 
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="structural_modelling.png" alt="Structural"> -->
+      <article class="project-card">
+        <div class="project-img" aria-hidden="true">
+          <!-- When adding structural_modelling.png, remove aria-hidden from this wrapper and provide alt text describing the actual model view. -->
           <span class="project-img-label">Structural</span>
         </div>
         <h3 class="project-title">14-Storey Structural Design</h3>
         <p class="project-desc">Modelled full structural system including concrete foundations, footings, and steel floor joists. Linked architectural models for full-discipline alignment.</p>
         <span class="project-tool">Revit</span>
         <span class="project-tool">Structural</span>
-      </div>
+      </article>
 
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="civil_development.png" alt="Civil 3D"> -->
+      <article class="project-card">
+        <div class="project-img" aria-hidden="true">
+          <!-- When adding civil_development.png, remove aria-hidden from this wrapper and provide alt text describing the actual model view. -->
           <span class="project-img-label">Civil 3D</span>
         </div>
         <h3 class="project-title">Civil 3D Land Development</h3>
         <p class="project-desc">Developed survey databases and alignments for road networks and water/storm sewer assemblies for a farmland parcel development.</p>
         <span class="project-tool">Civil 3D</span>
         <span class="project-tool">Infrastructure</span>
-      </div>
+      </article>
 
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="410_keele.png" alt="410 Keele St"> -->
+      <article class="project-card">
+        <div class="project-img" aria-hidden="true">
+          <!-- When adding 410_keele.png, remove aria-hidden from this wrapper and provide alt text describing the actual model view. -->
           <span class="project-img-label">410 Keele St</span>
         </div>
         <h3 class="project-title">410 Keele St — Multi-Residential</h3>
         <p class="project-desc">Modelled building envelope, suite floor plans, and renderings for an existing building designed by RAW Architects.</p>
         <span class="project-tool">Revit</span>
         <span class="project-tool">Residential</span>
-      </div>
+      </article>
 
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="clash_detection.png" alt="Navisworks"> -->
+      <article class="project-card">
+        <div class="project-img" aria-hidden="true">
+          <!-- When adding clash_detection.png, remove aria-hidden from this wrapper and provide alt text describing the actual model view. -->
           <span class="project-img-label">Navisworks</span>
         </div>
         <h3 class="project-title">4D Scheduling &amp; Clash Detection</h3>
         <p class="project-desc">Automated clash detection and 4D simulations using Navisworks to review material take-offs and construction sequencing animations.</p>
         <span class="project-tool">Navisworks</span>
         <span class="project-tool">4D</span>
-      </div>
+      </article>
 
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="kingston_road.png" alt="1496 Kingston Rd"> -->
+      <article class="project-card">
+        <div class="project-img" aria-hidden="true">
+          <!-- When adding kingston_road.png, remove aria-hidden from this wrapper and provide alt text describing the actual model view. -->
           <span class="project-img-label">1496 Kingston Rd</span>
         </div>
         <h3 class="project-title">1496 Kingston Rd — Integrated BIM</h3>
@@ -429,21 +471,23 @@
         <span class="project-tool">ACC</span>
         <span class="project-tool">Revit</span>
         <span class="project-tool">BXP</span>
-      </div>
+      </article>
 
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" aria-labelledby="contact-heading">
   <div class="container">
     <p class="section-label">Get in Touch</p>
-    <h2 class="section-title">Let's build something together.</h2>
+    <h2 id="contact-heading" class="section-title">Let's build something together.</h2>
     <p class="contact-sub">Open to BIM coordination roles, project management opportunities, and consulting engagements in Ontario.</p>
     <a href="mailto:kamal.007_deep@hotmail.com" class="contact-btn">Send an Email</a>
   </div>
 </section>
+
+</main>
 
 <footer>
   <span class="footer-name">Kamaldeep Singh</span>
@@ -452,3 +496,4 @@
 
 </body>
 </html>
+
